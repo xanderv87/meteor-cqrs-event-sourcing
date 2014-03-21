@@ -1,7 +1,7 @@
 class @EventHandler
   constructor: (@data) ->
     if Meteor.isServer
-      this.userId
+      @user = this.userId
     else
       @user = Meteor.userId()
     @eventName = @.constructor.name
