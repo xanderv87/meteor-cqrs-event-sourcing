@@ -1,0 +1,11 @@
+{
+    "name": "cqrs-event-sourcing",
+    "description": "CQRS and event-sourcing for Meteor",
+    "homepage": "https://github.com/xanderv87/meteor-cqrs-event-sourcing.git",
+    "author": "Xander Verheij (http://xrv.nl / http://ihomer.nl)",
+    "version": "0.0.1",
+    "git": "https://github.com/xanderv87/meteor-cqrs-event-sourcing.git",
+    "packages": {
+
+    }
+}
