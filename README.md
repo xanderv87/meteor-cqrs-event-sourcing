@@ -1,0 +1,2 @@
+meteor-cqrs-event-sourcing
+==========================
