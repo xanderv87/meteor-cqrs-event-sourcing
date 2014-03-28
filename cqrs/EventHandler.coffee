@@ -1,5 +1,6 @@
 class @EventHandler
   constructor: (@data) ->
+    @user = ""
     if Meteor.isServer
       @user = this.userId
     else
