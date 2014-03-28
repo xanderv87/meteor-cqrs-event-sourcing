@@ -1,6 +1,7 @@
 class @Command
 
   constructor: (@data) ->
+    @user = ""
     if Meteor.isServer
       @user = this.userId
     else
