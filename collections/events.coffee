@@ -19,7 +19,8 @@
     error:
       type: Boolean,
       label: 'Execution resulted in an error'
-      defaultValue: false
+      optional: true
+
     errorDetails:
       type: Object
       label: 'Execution error details'
@@ -45,9 +46,9 @@ if Meteor.isServer
     _.each(handlers, (handler) ->
       try
         (new handler(fields.eventData)).execute()
+        EventStore.update(id, $set: {executed: true})
       catch error
         EventStore.update(id, {$set: {error: true, errorDetails: error}})
-
     )
 
     EventStore.update(id, $set: {executed: true})
