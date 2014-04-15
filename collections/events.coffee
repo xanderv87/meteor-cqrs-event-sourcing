@@ -20,6 +20,7 @@
       type: Boolean,
       label: 'Execution resulted in an error'
       optional: true
+      defaultValue: false
 
     errorDetails:
       type: Object
@@ -48,10 +49,10 @@ if Meteor.isServer
         (new handler(fields.eventData)).execute()
         EventStore.update(id, $set: {executed: true})
       catch error
-        EventStore.update(id, {$set: {error: true, errorDetails: error}})
+        err = JSON.parse JSON.stringify error
+        EventStore.update(id, {$set: {error: true, errorDetails: err}})
     )
 
-    EventStore.update(id, $set: {executed: true})
 
   @EventStore.find({executed: false, error: false}, {limit: 1, sort: {executedAt: 1}}).observeChanges
     added: execute
