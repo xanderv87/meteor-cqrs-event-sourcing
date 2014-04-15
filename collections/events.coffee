@@ -19,7 +19,7 @@
     error:
       type: Boolean,
       label: 'Execution resulted in an error'
-      default: false
+      defaultValue: false
     errorDetails:
       type: Object
       label: 'Execution error details'
