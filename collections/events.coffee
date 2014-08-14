@@ -1,4 +1,4 @@
-@EventStore = new Meteor.Collection 'events',
+@EventStore = new Meteor.Collection 'eventStore',
   schema: new SimpleSchema(
     executedAt:
       type: Date,
